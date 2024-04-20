@@ -6,3 +6,4 @@ class Transactions:
         self.recipient = recipient
         self. amount = amount
         self timestamp = time.time()
+        
