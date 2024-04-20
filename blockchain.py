@@ -1,3 +1,6 @@
+import time
+from transactions import Transactions 
+from block import Block 
 class Blockchain:
     def __init__(self):
         self.chain = [] #to store complete blocks
@@ -6,7 +9,7 @@ class Blockchain:
 
 # creating first ever block, initializing index and previous hash to 0
     def create_genesis_block(self):
-        genesis_transactions = [Transaction("Satoshi", "HalFinney", 100)]
+        genesis_transactions = [Transactions("Satoshi", "HalFinney", 100)]
         timestamp = time.time()
         genesis_block = Block(index = 0, previous_hash = "0", transactions=genesis_transactions, timestamp=timestamp)
         self.chain.append(genesis_block)
@@ -39,3 +42,6 @@ class Blockchain:
                 return False
 
         return True
+
+
+        

@@ -1,11 +1,11 @@
 import time
 
 class Block:
-    def __init__(self, index, previous_hash, transactions):
+    def __init__(self, index, previous_hash, transactions, timestamp=None):
         self.index = index
         self.previous_hash = previous_hash
         self.transactions = transactions
-        self.timestamp = time.time()
+        self.timestamp = timestamp if timestamp is not None else time.time()
         self.hash = self.calculate_hash()
 
     def calculate_hash(self):
@@ -16,3 +16,4 @@ class Block:
         for char in string_val:
             hash_val += ord(char)
         return hash_val
+        
